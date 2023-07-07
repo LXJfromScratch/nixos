@@ -110,6 +110,7 @@ in
   environment = {
     systemPackages = (with pkgs; [
         wget
+        ranger
         gcc
         fzf
         nodejs
@@ -119,7 +120,6 @@ in
         kdenlive
         kate
         obsidian
-#neovim
         qq
         firefox
         libreoffice

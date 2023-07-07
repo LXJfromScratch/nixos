@@ -1,16 +1,18 @@
 {config, pkgs, ...}:
 {
-	home.username = "lxj";
-	home.homeDirectory = "/home/lxj";
-	home.stateVersion = "23.05";
-	home.packages = [ pkgs.atool pkgs.httpie ];
-	programs = {
-		#neovim = import ./apps/neovim.nix;		
-		neovim.enable = true;
+  home.username = "lxj";
+  home.homeDirectory = "/home/lxj";
+  home.stateVersion = "23.05";
+  home.packages = [ pkgs.atool pkgs.httpie ];
+  imports = [
+  ];
+  programs = {
+#neovim = import ./apps/neovim.nix;		
+    neovim.enable = true;
     git = {
-			enable = true;
-		};
-		htop.enable = true;
+      enable = true;
+    };
+    htop.enable = true;
     java = {
       enable = true;
       package = pkgs.openjdk17;
@@ -21,5 +23,6 @@
     google-chrome = {
       enable = true;
     };
-	}; 
+    vscode = import ./apps/vscode.nix;
+  }; 
 }
